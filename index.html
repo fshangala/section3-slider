@@ -4,10 +4,42 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Slider</title>
-    <link href="/vendor/bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendor/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="vendor/assets/owl.theme.default.min.css">
   </head>
   <body>
-    <h1>Hello, world!</h1>
-    <script src="/vendor/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <div class="row">
+      <div class="col-6">
+        <div class="row">
+          <div class="col-4"><button onclick="var owl = $('.owl-carousel');owl.owlCarousel();owl.trigger('to.owl.carousel',[0]);" class="btn w-100"><img src="assets/icons/app_registration_FILL0_wght400_GRAD0_opsz24.png" class="img-thumbnail w-100" alt="a"></button></div>
+          <div class="col-4"><button onclick="var owl = $('.owl-carousel');owl.owlCarousel();owl.trigger('to.owl.carousel',[1]);" class="btn w-100"><img src="assets/icons/assistant_navigation_FILL0_wght400_GRAD0_opsz24.png" class="img-thumbnail w-100" alt="a"></button></div>
+          <div class="col-4"><button onclick="var owl = $('.owl-carousel');owl.owlCarousel();owl.trigger('to.owl.carousel',[2]);" class="btn w-100"><img src="assets/icons/dataset_FILL0_wght400_GRAD0_opsz24.png" class="img-thumbnail w-100" alt="a"></button></div>
+          <div class="col-4"><button onclick="var owl = $('.owl-carousel');owl.owlCarousel();owl.trigger('to.owl.carousel',[3]);" class="btn w-100"><img src="assets/icons/download_for_offline_FILL0_wght400_GRAD0_opsz24.png" class="img-thumbnail w-100" alt="a"></button></div>
+          <div class="col-4"><button onclick="var owl = $('.owl-carousel');owl.owlCarousel();owl.trigger('to.owl.carousel',[4]);" class="btn w-100"><img src="assets/icons/manage_search_FILL0_wght400_GRAD0_opsz24.png" class="img-thumbnail w-100" alt="a"></button></div>
+          <div class="col-4"><button onclick="var owl = $('.owl-carousel');owl.owlCarousel();owl.trigger('to.owl.carousel',[5]);" class="btn w-100"><img src="assets/icons/open_with_FILL0_wght400_GRAD0_opsz24.png" class="img-thumbnail w-100" alt="a"></button></div>
+          <div class="col-4"><button onclick="var owl = $('.owl-carousel');owl.owlCarousel();owl.trigger('to.owl.carousel',[6]);" class="btn w-100"><img src="assets/icons/settings_accessibility_FILL0_wght400_GRAD0_opsz24.png" class="img-thumbnail w-100" alt="a"></button></div>
+          <div class="col-4"><button onclick="var owl = $('.owl-carousel');owl.owlCarousel();owl.trigger('to.owl.carousel',[7]);" class="btn w-100"><img src="assets/icons/star_half_FILL0_wght400_GRAD0_opsz24.png" class="img-thumbnail w-100" alt="a"></button></div>
+          <div class="col-4"><button onclick="var owl = $('.owl-carousel');owl.owlCarousel();owl.trigger('to.owl.carousel',[8]);" class="btn w-100"><img src="assets/icons/terminal_FILL0_wght400_GRAD0_opsz24.png" class="img-thumbnail w-100" alt="a"></button></div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="owl-carousel">
+          <img src="assets/a.jpg" class="img-thumbnail" alt="a">
+          <img src="assets/b.jpg" class="img-thumbnail" alt="b">
+          <img src="assets/c.png" class="img-thumbnail" alt="c">
+          <img src="assets/d.png" class="img-thumbnail" alt="d">
+          <img src="assets/e.PNG" class="img-thumbnail" alt="e">
+          <img src="assets/f.PNG" class="img-thumbnail" alt="f">
+          <img src="assets/g.PNG" class="img-thumbnail" alt="g">
+          <img src="assets/h.PNG" class="img-thumbnail" alt="h">
+          <img src="assets/i.PNG" class="img-thumbnail" alt="i">
+        </div>
+      </div>
+    </div>
+    <script src="vendor/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery-3.7.1.min.js"></script>
+    <script src="vendor/owl.carousel.min.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
