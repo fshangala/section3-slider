@@ -23,6 +23,7 @@ add_action( 'init', function(){
       "a"=>array(
         "icon"=>plugin_dir_url( __FILE__ )."assets/icons/a.svg",
         "label"=>"Label a",
+        "description"=>"Some text description for this particular slider",
         "slides"=>array(
           array(
             "image"=>plugin_dir_url( __FILE__ )."assets/a1.jpg",
@@ -41,6 +42,7 @@ add_action( 'init', function(){
       "b"=>array(
         "icon"=>plugin_dir_url( __FILE__ )."assets/icons/b.svg",
         "label"=>"Label b",
+        "description"=>"Some text description for this particular slider",
         "slides"=>array(
           array(
             "image"=>plugin_dir_url( __FILE__ )."assets/b1.jpg",
@@ -59,6 +61,7 @@ add_action( 'init', function(){
       "c"=>array(
         "icon"=>plugin_dir_url( __FILE__ )."assets/icons/c.svg",
         "label"=>"Label c",
+        "description"=>"Some text description for this particular slider",
         "slides"=>array(
           array(
             "image"=>plugin_dir_url( __FILE__ )."assets/c1.jpg",
@@ -77,6 +80,7 @@ add_action( 'init', function(){
       "d"=>array(
         "icon"=>plugin_dir_url( __FILE__ )."assets/icons/d.svg",
         "label"=>"Label d",
+        "description"=>"Some text description for this particular slider",
         "slides"=>array(
           array(
             "image"=>plugin_dir_url( __FILE__ )."assets/d1.jpg",
@@ -95,6 +99,7 @@ add_action( 'init', function(){
       "e"=>array(
         "icon"=>plugin_dir_url( __FILE__ )."assets/icons/e.svg",
         "label"=>"Label e",
+        "description"=>"Some text description for this particular slider",
         "slides"=>array(
           array(
             "image"=>plugin_dir_url( __FILE__ )."assets/e1.jpg",
@@ -113,6 +118,7 @@ add_action( 'init', function(){
       "f"=>array(
         "icon"=>plugin_dir_url( __FILE__ )."assets/icons/f.svg",
         "label"=>"Label f",
+        "description"=>"Some text description for this particular slider",
         "slides"=>array(
           array(
             "image"=>plugin_dir_url( __FILE__ )."assets/f1.jpg",
@@ -131,6 +137,7 @@ add_action( 'init', function(){
       "g"=>array(
         "icon"=>plugin_dir_url( __FILE__ )."assets/icons/g.svg",
         "label"=>"Label g",
+        "description"=>"Some text description for this particular slider",
         "slides"=>array(
           array(
             "image"=>plugin_dir_url( __FILE__ )."assets/g1.jpg",
@@ -149,6 +156,7 @@ add_action( 'init', function(){
       "h"=>array(
         "icon"=>plugin_dir_url( __FILE__ )."assets/icons/h.svg",
         "label"=>"Label h",
+        "description"=>"Some text description for this particular slider",
         "slides"=>array(
           array(
             "image"=>plugin_dir_url( __FILE__ )."assets/h1.jpg",
@@ -167,6 +175,7 @@ add_action( 'init', function(){
       "i"=>array(
         "icon"=>plugin_dir_url( __FILE__ )."assets/icons/i.svg",
         "label"=>"Label i",
+        "description"=>"Some text description for this particular slider",
         "slides"=>array(
           array(
             "image"=>plugin_dir_url( __FILE__ )."assets/i1.jpg",
@@ -211,31 +220,28 @@ add_action( 'init', function(){
                 $tab_panes .= "
                 <div class=\"carousel-item active\">
                   <img src=\"".$slide_value["image"]."\" class=\"d-block w-100\" alt=\"".$slide_value["image"]."\">
-                  <div class=\"p-4 text-bg-primary bg-gradient\" style=\"--bs-bg-opacity: .8;\">
-                    <p>".$slide_value["description"]."</p>
-                  </div>
                 </div>";
                 $first_slide=FALSE;
               } else {
                 $tab_panes .= "
                 <div class=\"carousel-item\">
                   <img src=\"".$slide_value["image"]."\" class=\"d-block w-100\" alt=\"".$slide_value["image"]."\">
-                  <div class=\"p-4 text-bg-primary bg-gradient\" style=\"--bs-bg-opacity: .8;\">
-                    <p>".$slide_value["description"]."</p>
-                  </div>
                 </div>";
               }
             }
             $tab_panes .= "
             </div>
-            <button class=\"carousel-control-prev\" type=\"button\" data-bs-target=\"#section3slider-".$key."\" data-bs-slide=\"prev\">
-              <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>
-              <span class=\"visually-hidden\">Previous</span>
-            </button>
-            <button class=\"carousel-control-next\" type=\"button\" data-bs-target=\"#section3slider-".$key."\" data-bs-slide=\"next\">
-              <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>
-              <span class=\"visually-hidden\">Next</span>
-            </button>
+            <div class=\"p-4 text-bg-primary bg-gradient\">
+              <button class=\"btn btn-primary\" type=\"button\" data-bs-target=\"#section3slider-".$key."\" data-bs-slide=\"prev\">
+                <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>
+                <span class=\"visually-hidden\">Previous</span>
+              </button>
+              <button class=\"btn btn-primary\" type=\"button\" data-bs-target=\"#section3slider-".$key."\" data-bs-slide=\"next\">
+                <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>
+                <span class=\"visually-hidden\">Next</span>
+              </button>
+              <p class=\"text-center\">".$value["description"]."</p>
+            </div>
           </div>
         </div>";
         $first=FALSE;
@@ -263,31 +269,28 @@ add_action( 'init', function(){
                     $tab_panes .= "
                     <div class=\"carousel-item active\">
                       <img src=\"".$slide_value["image"]."\" class=\"d-block w-100\" alt=\"".$slide_value["image"]."\">
-                      <div class=\"p-4 text-bg-primary bg-gradient\" style=\"--bs-bg-opacity: .8;\">
-                        <p>".$slide_value["description"]."</p>
-                      </div>
                     </div>";
                     $first_slide=FALSE;
                   } else {
                     $tab_panes .= "
                     <div class=\"carousel-item\">
                       <img src=\"".$slide_value["image"]."\" class=\"d-block w-100\" alt=\"".$slide_value["image"]."\">
-                      <div class=\"p-4 text-bg-primary bg-gradient\" style=\"--bs-bg-opacity: .8;\">
-                        <p>".$slide_value["description"]."</p>
-                      </div>
                     </div>";
                   }
                 }
                 $tab_panes .= "
                 </div>
-                <button class=\"carousel-control-prev\" type=\"button\" data-bs-target=\"#section3slider-".$key."\" data-bs-slide=\"prev\">
-                  <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>
-                  <span class=\"visually-hidden\">Previous</span>
-                </button>
-                <button class=\"carousel-control-next\" type=\"button\" data-bs-target=\"#section3slider-".$key."\" data-bs-slide=\"next\">
-                  <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>
-                  <span class=\"visually-hidden\">Next</span>
-                </button>
+                <div class=\"p-4 text-bg-primary bg-gradient\">
+                  <button class=\"btn btn-primary\" type=\"button\" data-bs-target=\"#section3slider-".$key."\" data-bs-slide=\"prev\">
+                    <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>
+                    <span class=\"visually-hidden\">Previous</span>
+                  </button>
+                  <button class=\"btn btn-primary\" type=\"button\" data-bs-target=\"#section3slider-".$key."\" data-bs-slide=\"next\">
+                    <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>
+                    <span class=\"visually-hidden\">Next</span>
+                  </button>
+                  <p class=\"text-center\">".$value["description"]."</p>
+                </div>
               </div>
             </div>";
       }
