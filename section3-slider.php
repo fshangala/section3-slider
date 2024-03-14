@@ -23,7 +23,7 @@ add_action( 'init', function(){
       "a"=>array(
         "icon"=>plugin_dir_url( __FILE__ )."assets/icons/a.svg",
         "label"=>"Label a",
-        "description"=>"Some text description for this particular slider",
+        "description"=>"Making good use of the advantages of  high floors and adding a loft to your home will not only enhance the modern feel of your home, but also help increase practical space!",
         "slides"=>array(
           array(
             "image"=>plugin_dir_url( __FILE__ )."assets/a1.jpg",
@@ -42,7 +42,7 @@ add_action( 'init', function(){
       "b"=>array(
         "icon"=>plugin_dir_url( __FILE__ )."assets/icons/b.svg",
         "label"=>"Label b",
-        "description"=>"Some text description for this particular slider",
+        "description"=>"Making good use of the advantages of  high floors and adding a loft to your home will not only enhance the modern feel of your home, but also help increase practical space!",
         "slides"=>array(
           array(
             "image"=>plugin_dir_url( __FILE__ )."assets/b1.jpg",
@@ -61,7 +61,7 @@ add_action( 'init', function(){
       "c"=>array(
         "icon"=>plugin_dir_url( __FILE__ )."assets/icons/c.svg",
         "label"=>"Label c",
-        "description"=>"Some text description for this particular slider",
+        "description"=>"Making good use of the advantages of  high floors and adding a loft to your home will not only enhance the modern feel of your home, but also help increase practical space!",
         "slides"=>array(
           array(
             "image"=>plugin_dir_url( __FILE__ )."assets/c1.jpg",
@@ -80,7 +80,7 @@ add_action( 'init', function(){
       "d"=>array(
         "icon"=>plugin_dir_url( __FILE__ )."assets/icons/d.svg",
         "label"=>"Label d",
-        "description"=>"Some text description for this particular slider",
+        "description"=>"Making good use of the advantages of  high floors and adding a loft to your home will not only enhance the modern feel of your home, but also help increase practical space!",
         "slides"=>array(
           array(
             "image"=>plugin_dir_url( __FILE__ )."assets/d1.jpg",
@@ -99,7 +99,7 @@ add_action( 'init', function(){
       "e"=>array(
         "icon"=>plugin_dir_url( __FILE__ )."assets/icons/e.svg",
         "label"=>"Label e",
-        "description"=>"Some text description for this particular slider",
+        "description"=>"Making good use of the advantages of  high floors and adding a loft to your home will not only enhance the modern feel of your home, but also help increase practical space!",
         "slides"=>array(
           array(
             "image"=>plugin_dir_url( __FILE__ )."assets/e1.jpg",
@@ -118,7 +118,7 @@ add_action( 'init', function(){
       "f"=>array(
         "icon"=>plugin_dir_url( __FILE__ )."assets/icons/f.svg",
         "label"=>"Label f",
-        "description"=>"Some text description for this particular slider",
+        "description"=>"Making good use of the advantages of  high floors and adding a loft to your home will not only enhance the modern feel of your home, but also help increase practical space!",
         "slides"=>array(
           array(
             "image"=>plugin_dir_url( __FILE__ )."assets/f1.jpg",
@@ -137,7 +137,7 @@ add_action( 'init', function(){
       "g"=>array(
         "icon"=>plugin_dir_url( __FILE__ )."assets/icons/g.svg",
         "label"=>"Label g",
-        "description"=>"Some text description for this particular slider",
+        "description"=>"Making good use of the advantages of  high floors and adding a loft to your home will not only enhance the modern feel of your home, but also help increase practical space!",
         "slides"=>array(
           array(
             "image"=>plugin_dir_url( __FILE__ )."assets/g1.jpg",
@@ -156,7 +156,7 @@ add_action( 'init', function(){
       "h"=>array(
         "icon"=>plugin_dir_url( __FILE__ )."assets/icons/h.svg",
         "label"=>"Label h",
-        "description"=>"Some text description for this particular slider",
+        "description"=>"Making good use of the advantages of  high floors and adding a loft to your home will not only enhance the modern feel of your home, but also help increase practical space!",
         "slides"=>array(
           array(
             "image"=>plugin_dir_url( __FILE__ )."assets/h1.jpg",
@@ -175,7 +175,7 @@ add_action( 'init', function(){
       "i"=>array(
         "icon"=>plugin_dir_url( __FILE__ )."assets/icons/i.svg",
         "label"=>"Label i",
-        "description"=>"Some text description for this particular slider",
+        "description"=>"Making good use of the advantages of  high floors and adding a loft to your home will not only enhance the modern feel of your home, but also help increase practical space!",
         "slides"=>array(
           array(
             "image"=>plugin_dir_url( __FILE__ )."assets/i1.jpg",
@@ -322,21 +322,13 @@ add_action( 'wp_enqueue_scripts', function(){
 /**
  * Activate the plugin.
  */
-function section3slider_activate() { 
-	// Trigger our function that registers the custom post type plugin.
-	section3slider_setup_post_type(); 
-	// Clear the permalinks after the post type has been registered.
+register_activation_hook( __FILE__, function(){
 	flush_rewrite_rules(); 
-}
-register_activation_hook( __FILE__, 'section3slider_activate' );
+} );
 
 /**
  * Deactivation hook.
  */
-function section3slider_deactivate() {
-	// Unregister the post type, so the rules are no longer in memory.
-	unregister_post_type( 'section3slide' );
-	// Clear the permalinks to remove our post type's rules from the database.
+register_deactivation_hook( __FILE__, function(){
 	flush_rewrite_rules();
-}
-register_deactivation_hook( __FILE__, 'section3slider_deactivate' );
+} );
