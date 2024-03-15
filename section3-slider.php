@@ -14,10 +14,23 @@
  * Domain Path:       /languages
  */
 
-/**
-* Register the section3slider_render shortcode
-*/
+
 add_action( 'init', function(){
+  /**
+   * Register the section3slider_animation shortcode
+   */
+  add_shortcode("section3slider_animation",function($attr=[],$content=null){
+		return "
+    <div class=\"position-relative\">
+      <div class=\"top-cover bg-white position-absolute top-0 end-0 z-3\" style=\"width: 100%; height: 100%;\"></div>
+      <div class=\"under-cover bg-primary opacity-50 position-absolute top-0 end-0 z-2\" style=\"width: 100%; height: 100%;\"></div>
+      ".$content."
+    </div>
+		";
+  });
+  /**
+  * Register the section3slider_render shortcode
+  */
 	add_shortcode("section3slider_render",function($attr=[],$content=null){
     $sections_list = array(
       "a"=>array(
@@ -297,14 +310,16 @@ add_action( 'init', function(){
     }
 		return "
     <div class=\"row\">
-      <div class=\"col-6\">
+      <div class=\"col-sm-6\">
         <div class=\"row nav nav-pills slider-buttons\">
         ".$nav_items."
         </div>
       </div>
-      <div class=\"col-6\">
-        <div class=\"tab-content\" id=\"section3slider-tabContent\">
-        ".$tab_panes."
+      <div class=\"col-sm-6\">
+        <div class=\"tab-content position-relative\" id=\"section3slider-tabContent\">
+          <div class=\"top-cover bg-white position-absolute top-0 end-0 z-3\" style=\"width: 100%; height: 100%;\"></div>
+          <div class=\"under-cover bg-primary opacity-50 position-absolute top-0 end-0 z-2\" style=\"width: 100%; height: 100%;\"></div>
+          ".$tab_panes."
         </div>
       </div>
     </div>
@@ -316,6 +331,7 @@ add_action( 'wp_enqueue_scripts', function(){
 	wp_enqueue_style( 'section3slider_shortcode_bootstrap', plugin_dir_url( __FILE__ )."vendor/bootstrap-5.3.3-dist/css/bootstrap.min.css");
 
 	wp_enqueue_script( 'section3slider_shortcode_bootstrap', plugin_dir_url( __FILE__ )."vendor/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js");
+	wp_enqueue_script( 'section3slider_shortcode_jquery', plugin_dir_url( __FILE__ )."vendor/jquery-3.7.1.min.js");
 	wp_enqueue_script( 'section3slider_main', plugin_dir_url( __FILE__ )."main.js");
 });
 
