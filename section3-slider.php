@@ -316,7 +316,7 @@ add_action( 'init', function(){
         </div>
       </div>
       <div class=\"col-sm-6\">
-        <div class=\"tab-content position-relative\" id=\"section3slider-tabContent\">
+        <div class=\"tab-content section3slider-animation position-relative\" id=\"section3slider-tabContent\">
           <div class=\"top-cover bg-white position-absolute top-0 end-0 z-3\" style=\"width: 100%; height: 100%;\"></div>
           <div class=\"under-cover bg-primary opacity-50 position-absolute top-0 end-0 z-2\" style=\"width: 100%; height: 100%;\"></div>
           ".$tab_panes."
