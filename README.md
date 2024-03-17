@@ -1,0 +1,2 @@
+- `[section3slider_render]` is the shortcode for the slider.
+- add `section3slider-animation position-relative` classes to the container element whose content you want to have the animation.
