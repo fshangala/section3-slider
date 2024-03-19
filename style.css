@@ -1,0 +1,101 @@
+.section3slider .row {
+  display: flex;
+  flex-direction: row;
+}
+.section3slider .row .column {
+  flex: 50%;
+}
+.section3slider .button-group {
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.section3slider .button-group .button {
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  color: rgb(172, 157, 144);
+  background-color: white;
+  transition: color 0.5s, background-color 0.5s;
+  flex: 33.33%;
+  justify-content: center;
+}
+.section3slider .button-group .button:hover {
+  color: white;
+  background-color: rgb(172, 157, 144);
+}
+.section3slider .button-group .button img {
+  width: 100%;
+}
+.section3slider .button-group .active {
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  color: white !important;
+  background-color: rgb(172, 157, 144) !important;
+  transition: color 0.5s, background-color 0.5s;
+}
+.section3slider .slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+  padding: 16px;
+  display: none;
+  animation-name: fade;
+  animation-duration: 2s;
+}
+.section3slider .slideshow-container .slide {
+  display: none;
+  animation-name: fade;
+  animation-duration: 2s;
+}
+.section3slider .slideshow-container .slide img {
+  width: 100%;
+}
+.section3slider .slideshow-container .text {
+  color: white;
+  background-color: rgb(172, 157, 144);
+  padding: 16px;
+}
+.section3slider .slideshow-container .text .text-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.section3slider .slideshow-container .text .text-header .heading {
+  flex-grow: 8;
+}
+.section3slider .slideshow-container .text .text-header .buttons {
+  flex-grow: 1;
+  justify-content: end;
+}
+.section3slider .slideshow-container .text .text-header .buttons .next, .section3slider .slideshow-container .text .text-header .buttons .previous {
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  color: rgb(172, 157, 144);
+  background-color: white;
+  transition: color 0.5s, background-color 0.5s;
+}
+.section3slider .slideshow-container .text .text-header .buttons .next:hover, .section3slider .slideshow-container .text .text-header .buttons .previous:hover {
+  color: white;
+  background-color: rgb(172, 157, 144);
+}
+
+@media (max-width: 800px) {
+  .section3slider .row {
+    flex-direction: column;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,118 @@
+$prefix: section3slider;
+$primaryColor: rgb(172, 157, 144);
+$primaryTextColor: white;
+
+@mixin button() {
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  color: $primaryColor;
+  background-color: $primaryTextColor;
+  transition: color .5s, background-color .5s;
+
+  &:hover {
+    color: $primaryTextColor;
+    background-color: $primaryColor;
+  }
+}
+
+@mixin buttonActive() {
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  color: $primaryTextColor !important;
+  background-color: $primaryColor !important;
+  transition: color .5s, background-color .5s;
+}
+
+.#{$prefix} {
+  .row {
+    display: flex;
+    flex-direction: row;
+
+    .column {
+      flex: 50%;
+    }
+  }
+
+  .button-group {
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .button {
+      @include button();
+      flex: 33.33%;
+      justify-content: center;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .active {
+      @include buttonActive();
+    }
+  }
+
+  .slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+    padding: 16px;
+    display: none;
+    animation-name: fade;
+    animation-duration: 2s;
+
+    .slide {
+      display: none;
+      animation-name: fade;
+      animation-duration: 2s;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .text {
+      color: $primaryTextColor;
+      background-color: $primaryColor;
+      padding: 16px;
+      .text-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .heading {
+          flex-grow: 8;
+        }
+
+        .buttons {
+          flex-grow: 1;
+          justify-content: end;
+          
+          .next, .previous {
+            @include button();
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .#{$prefix} .row {
+    flex-direction: column;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
