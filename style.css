@@ -27,7 +27,9 @@
   background-color: rgb(172, 157, 144);
 }
 .section3slider .button-group .button img {
-  width: 100%;
+  display: block;
+  margin: auto;
+  width: 75%;
 }
 .section3slider .button-group .active {
   border: none;
@@ -37,49 +39,75 @@
   background-color: rgb(172, 157, 144) !important;
   transition: color 0.5s, background-color 0.5s;
 }
-.section3slider .slideshow-container {
-  max-width: 100%;
+.section3slider .slideshows {
   position: relative;
+}
+.section3slider .slideshows .slide-animation-top-cover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0%;
+  height: 100%;
+  background-color: white;
+  z-index: 1000;
+  animation-name: slide;
+  animation-duration: 1s;
+}
+.section3slider .slideshows .slide-animation-bottom-cover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0%;
+  height: 100%;
+  background-color: rgb(172, 157, 144);
+  opacity: 0.8;
+  z-index: 100;
+  animation-name: slide;
+  animation-duration: 1.5s;
+}
+.section3slider .slideshows .slideshow-container {
+  max-width: 100%;
   margin: auto;
   padding: 16px;
   display: none;
   animation-name: fade;
-  animation-duration: 2s;
+  animation-duration: 1s;
 }
-.section3slider .slideshow-container .slide {
+.section3slider .slideshows .slideshow-container .slide {
   display: none;
   animation-name: fade;
-  animation-duration: 2s;
+  animation-duration: 1s;
 }
-.section3slider .slideshow-container .slide img {
+.section3slider .slideshows .slideshow-container .slide img {
   width: 100%;
 }
-.section3slider .slideshow-container .text {
+.section3slider .slideshows .slideshow-container .text {
   color: white;
   background-color: rgb(172, 157, 144);
   padding: 16px;
 }
-.section3slider .slideshow-container .text .text-header {
+.section3slider .slideshows .slideshow-container .text .text-header {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.section3slider .slideshow-container .text .text-header .heading {
+.section3slider .slideshows .slideshow-container .text .text-header .heading {
   flex-grow: 8;
 }
-.section3slider .slideshow-container .text .text-header .buttons {
+.section3slider .slideshows .slideshow-container .text .text-header .buttons {
   flex-grow: 1;
   justify-content: end;
 }
-.section3slider .slideshow-container .text .text-header .buttons .next, .section3slider .slideshow-container .text .text-header .buttons .previous {
+.section3slider .slideshows .slideshow-container .text .text-header .buttons .next, .section3slider .slideshows .slideshow-container .text .text-header .buttons .previous {
   border: none;
   border-radius: 8px;
   padding: 8px;
   color: rgb(172, 157, 144);
   background-color: white;
   transition: color 0.5s, background-color 0.5s;
+  padding: 16px;
 }
-.section3slider .slideshow-container .text .text-header .buttons .next:hover, .section3slider .slideshow-container .text .text-header .buttons .previous:hover {
+.section3slider .slideshows .slideshow-container .text .text-header .buttons .next:hover, .section3slider .slideshows .slideshow-container .text .text-header .buttons .previous:hover {
   color: white;
   background-color: rgb(172, 157, 144);
 }
@@ -95,6 +123,14 @@
   }
   to {
     opacity: 1;
+  }
+}
+@keyframes slide {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
   }
 }
 

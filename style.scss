@@ -48,7 +48,9 @@ $primaryTextColor: white;
       justify-content: center;
 
       img {
-        width: 100%;
+        display: block;
+        margin: auto;
+        width: 75%;
       }
     }
 
@@ -57,49 +59,79 @@ $primaryTextColor: white;
     }
   }
 
-  .slideshow-container {
-    max-width: 100%;
+  .slideshows {
     position: relative;
-    margin: auto;
-    padding: 16px;
-    display: none;
-    animation-name: fade;
-    animation-duration: 2s;
 
-    .slide {
-      display: none;
-      animation-name: fade;
-      animation-duration: 2s;
-
-      img {
-        width: 100%;
-      }
+    .slide-animation-top-cover {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0%;
+      height: 100%;
+      background-color: white;
+      z-index: 1000;
+      animation-name: slide;
+      animation-duration: 1s;
     }
 
-    .text {
-      color: $primaryTextColor;
+    .slide-animation-bottom-cover {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0%;
+      height: 100%;
       background-color: $primaryColor;
+      opacity: .8;
+      z-index: 100;
+      animation-name: slide;
+      animation-duration: 1.5s;
+    }
+    
+    .slideshow-container {
+      max-width: 100%;
+      margin: auto;
       padding: 16px;
-      .text-header {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+      display: none;
+      animation-name: fade;
+      animation-duration: 1s;
 
-        .heading {
-          flex-grow: 8;
+      .slide {
+        display: none;
+        animation-name: fade;
+        animation-duration: 1s;
+
+        img {
+          width: 100%;
         }
+      }
 
-        .buttons {
-          flex-grow: 1;
-          justify-content: end;
-          
-          .next, .previous {
-            @include button();
+      .text {
+        color: $primaryTextColor;
+        background-color: $primaryColor;
+        padding: 16px;
+        .text-header {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          .heading {
+            flex-grow: 8;
+          }
+
+          .buttons {
+            flex-grow: 1;
+            justify-content: end;
+            
+            .next, .previous {
+              @include button();
+              padding: 16px;
+            }
           }
         }
       }
     }
   }
+
 }
 
 @media (max-width: 800px) {
@@ -114,5 +146,14 @@ $primaryTextColor: white;
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes slide {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
   }
 }

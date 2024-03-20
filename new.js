@@ -56,10 +56,28 @@ function showSlide(index){
     }
   });
 }
+
+function doAnimation(){
+  var currentTop = window.scrollY;
+  var elementTop = $(".section3slider-top-cover").offset().top;
+  var difTop = elementTop - currentTop;
+  if (difTop < 300) {
+    $(".section3slider-top-cover").animate({width:"0"},{duration:400});
+    $(".section3slider-under-cover").animate({width:"0"},{duration:600});
+  }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   var slides = document.querySelectorAll(".section3slider .slideshow-container");
   slides.forEach(function(slide){
     section3Slideshows.push(new Section3Slider(slide));
   });
   showSlide(0);
+
+  var topCover = document.createElement("div");
+  topCover.classList.add("slide-animation-top-cover");
+  var bottomCover = document.createElement("div");
+  bottomCover.classList.add("slide-animation-bottom-cover");
+  document.querySelector(".slide-animation").prepend(bottomCover);
+  document.querySelector(".slide-animation").prepend(topCover);
 });

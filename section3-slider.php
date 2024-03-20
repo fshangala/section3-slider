@@ -189,8 +189,8 @@ add_action( 'init', function(){
         <div class=\"text-header\">
           <h3 class=\"heading\">".$value["title"]."</h3>
           <div class=\"buttons\">
-            <button class=\"previous\">previous</button>
-            <button class=\"next\">next</button>
+            <button class=\"previous\">&#10094;</button>
+            <button class=\"next\">&#10095;</button>
           </div>
         </div>
         <div class=\"text-body\">
@@ -208,7 +208,7 @@ add_action( 'init', function(){
           </div>
         </div>
         <div class=\"column\">
-          <div class=\"slideshows\">
+          <div class=\"slideshows slide-animation\">
             ".$tab_panes."
           </div>
         </div>
