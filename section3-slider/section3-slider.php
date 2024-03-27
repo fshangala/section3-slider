@@ -3,7 +3,7 @@
  * Plugin Name:       Section 3 Slider
  * Plugin URI:        https://github.com/fshangala/section3-slider
  * Description:       A section with a slider of images
- * Version:           2.1.2
+ * Version:           2.1.3
  * Requires at least: 5.2
  * Requires PHP:      7.2
  * Author:            Funduluka Shangala
@@ -217,11 +217,63 @@ add_action( 'init', function(){
 		";
 	});
 } );
+/*
+class Elementor_Hello_World_Widget_1 extends \Elementor\Widget_Base {
 
-add_action( 'wp_enqueue_scripts', function(){
-	wp_enqueue_style( 'section3slider_style', plugin_dir_url( __FILE__ )."style.css");
-	wp_enqueue_script( 'section3slider_js', plugin_dir_url( __FILE__ )."new.js");
-});
+	public function get_name() {
+		return 'hello_world_widget_1';
+	}
+
+	public function get_title() {
+		return esc_html__( 'Hello World 1', 'elementor-addon' );
+	}
+
+	public function get_icon() {
+		return 'eicon-code';
+	}
+
+	public function get_categories() {
+		return [ 'basic' ];
+	}
+
+	public function get_keywords() {
+		return [ 'hello', 'world' ];
+	}
+
+	protected function render() {
+		?>
+		<p> Hello World </p>
+		<?php
+	}
+
+	protected function content_template() {
+		?>
+		<p> Hello World </p>
+		<?php
+	}
+}
+
+add_action( 'elementor/widgets/register', function($widgets_manager){
+  $widgets_manager->register( new Elementor_Hello_World_Widget_1() );
+} );
+*/
+
+add_action( 'elementor/frontend/after_enqueue_styles', function(){
+	wp_register_style( 'section3slider_style', plugins_url( 'style.css', __FILE__ ) );
+
+	wp_enqueue_style( 'section3slider_style' );
+} );
+
+add_action( 'elementor/frontend/after_register_scripts', function(){
+	wp_register_script( 'section3slider_js', plugins_url( 'new.js', __FILE__ ) );
+
+	wp_enqueue_script( 'section3slider_js' );
+} );
+
+//add_action( 'wp_enqueue_scripts', function(){
+	//wp_enqueue_style( 'section3slider_style', plugin_dir_url( __FILE__ )."style.css");
+	//wp_enqueue_script( 'section3slider_js', plugin_dir_url( __FILE__ )."new.js");
+//});
 
 /**
  * Activate the plugin.

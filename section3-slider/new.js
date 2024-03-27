@@ -82,9 +82,10 @@ class Section3SliderClass {
 
   doAnimation(){
     document.querySelectorAll(".fshangala-slide-animation").forEach(function(element,key,array){
-      var currentTop = window.scrollY;
-      var elementTop = element.offsetTop;
-      var difTop = elementTop - currentTop;
+      //var currentTop = window.scrollY;
+      //var elementTop = element.getBoundingClientRect().y;
+      //var difTop = elementTop - currentTop;
+      var difTop = element.getBoundingClientRect().y;
       if (difTop < 300) {
         var topCover = document.createElement("div");
         topCover.classList.add("fshangala-slide-animation-top-cover");
