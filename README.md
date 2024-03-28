@@ -1,1 +1,2 @@
 - `[section3slider_render]` is the shortcode for the slider.
+- `fshangala-slide-animation` is the class that is added to the container element whose content you want to appear with the slide animation.
