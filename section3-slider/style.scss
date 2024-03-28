@@ -59,31 +59,6 @@ $primaryTextColor: white;
 
       .fshangala-slideshows {
         position: relative;
-    
-        .fshangala-slide-animation-top-cover {
-          position: absolute;
-          top: 0;
-          right: 0;
-          width: 0%;
-          height: 100%;
-          background-color: white;
-          z-index: 1000;
-          animation-name: slide;
-          animation-duration: 1s;
-        }
-    
-        .fshangala-slide-animation-bottom-cover {
-          position: absolute;
-          top: 0;
-          right: 0;
-          width: 0%;
-          height: 100%;
-          background-color: $primaryColor;
-          opacity: .8;
-          z-index: 100;
-          animation-name: slide;
-          animation-duration: 1.5s;
-        }
         
         .fshangala-slideshow-container {
           max-width: 100%;
@@ -132,6 +107,35 @@ $primaryTextColor: white;
     }
   }
 
+}
+
+.fshangala-slide-animation {
+  position: relative;
+  
+  .fshangala-slide-animation-top-cover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0%;
+    height: 100%;
+    background-color: white;
+    z-index: 1000;
+    animation-name: slide;
+    animation-duration: 1s;
+  }
+  
+  .fshangala-slide-animation-bottom-cover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0%;
+    height: 100%;
+    background-color: $primaryColor;
+    opacity: .8;
+    z-index: 100;
+    animation-name: slide;
+    animation-duration: 1.5s;
+  }
 }
 
 @media (max-width: 800px) {

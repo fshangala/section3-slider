@@ -85,15 +85,17 @@ class Section3SliderClass {
       //var currentTop = window.scrollY;
       //var elementTop = element.getBoundingClientRect().y;
       //var difTop = elementTop - currentTop;
-      var difTop = element.getBoundingClientRect().y;
-      if (difTop < 300) {
-        var topCover = document.createElement("div");
-        topCover.classList.add("fshangala-slide-animation-top-cover");
-        var bottomCover = document.createElement("div");
-        bottomCover.classList.add("fshangala-slide-animation-bottom-cover");
-        element.prepend(bottomCover);
-        element.prepend(topCover);
-        element.classList.remove("fshangala-slide-animation");
+      if(element.getAttribute("fshangala-slide-animated") !== "true"){
+        var difTop = element.getBoundingClientRect().y;
+        if (difTop < 300) {
+          var topCover = document.createElement("div");
+          topCover.classList.add("fshangala-slide-animation-top-cover");
+          var bottomCover = document.createElement("div");
+          bottomCover.classList.add("fshangala-slide-animation-bottom-cover");
+          element.prepend(bottomCover);
+          element.prepend(topCover);
+          element.setAttribute("fshangala-slide-animated","true");
+        }
       }
     });
   }

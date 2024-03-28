@@ -3,7 +3,7 @@
  * Plugin Name:       Section 3 Slider
  * Plugin URI:        https://github.com/fshangala/section3-slider
  * Description:       A section with a slider of images
- * Version:           2.1.3
+ * Version:           2.1.4
  * Requires at least: 5.2
  * Requires PHP:      7.2
  * Author:            Funduluka Shangala

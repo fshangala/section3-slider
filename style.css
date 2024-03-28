@@ -42,29 +42,6 @@
 .section3slider .fshangala-row .fshangala-column .fshangala-slideshows {
   position: relative;
 }
-.section3slider .fshangala-row .fshangala-column .fshangala-slideshows .fshangala-slide-animation-top-cover {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 0%;
-  height: 100%;
-  background-color: white;
-  z-index: 1000;
-  animation-name: slide;
-  animation-duration: 1s;
-}
-.section3slider .fshangala-row .fshangala-column .fshangala-slideshows .fshangala-slide-animation-bottom-cover {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 0%;
-  height: 100%;
-  background-color: rgb(172, 157, 144);
-  opacity: 0.8;
-  z-index: 100;
-  animation-name: slide;
-  animation-duration: 1.5s;
-}
 .section3slider .fshangala-row .fshangala-column .fshangala-slideshows .fshangala-slideshow-container {
   max-width: 100%;
   margin: auto;
@@ -110,6 +87,33 @@
 .section3slider .fshangala-row .fshangala-column .fshangala-slideshows .fshangala-slideshow-container .fshangala-text .fshangala-text-header .fshangala-buttons .fshangala-next:hover, .section3slider .fshangala-row .fshangala-column .fshangala-slideshows .fshangala-slideshow-container .fshangala-text .fshangala-text-header .fshangala-buttons .fshangala-previous:hover {
   color: white;
   background-color: rgb(172, 157, 144);
+}
+
+.fshangala-slide-animation {
+  position: relative;
+}
+.fshangala-slide-animation .fshangala-slide-animation-top-cover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0%;
+  height: 100%;
+  background-color: white;
+  z-index: 1000;
+  animation-name: slide;
+  animation-duration: 1s;
+}
+.fshangala-slide-animation .fshangala-slide-animation-bottom-cover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0%;
+  height: 100%;
+  background-color: rgb(172, 157, 144);
+  opacity: 0.8;
+  z-index: 100;
+  animation-name: slide;
+  animation-duration: 1.5s;
 }
 
 @media (max-width: 800px) {
